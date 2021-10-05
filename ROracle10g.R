@@ -1,0 +1,25 @@
+library(devtools)
+#library(RDCOMClient)
+library(data.table)
+library(odbc)
+library(ggplot2)
+library(DBI)
+library(RJDBC)
+library(RODM)
+library(rJava)ry(dbplyr)
+library(odbc)
+library(DBI)
+library(ROracle)
+library(RODBC)
+library(xlsx)
+
+#install.packages("xlsx")
+#this program runs with r version 3.6
+#install.packages("ROracle_1.3-2.zip",repos = NULL)
+drv <- dbDriver("Oracle")
+con <- dbConnect(drv,Server = 'xxx.xxx.xxx.xxx',username = 'xxxx',password = 'xxxx',Database = 'xxxx', port = xxxx)
+EMPLOYEE <- dbSendQuery(con, "SELECT * FROM EMPLOYEE_ALL")
+Employee <- fetch(EMPLOYEE) ## extract all rows
+dim(Employee)
+a=colnames(Employee)
+a
